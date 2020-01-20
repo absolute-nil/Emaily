@@ -29,7 +29,8 @@ passport.use(
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
       //callback is the url google will redirect us to after we are authenticated this should back
-      callbackURL: "/auth/google/callback"
+      callbackURL: "/auth/google/callback",
+      proxy: true
     },
     //
     (accessToken, refreshToken, profile, done) => {
