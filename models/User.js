@@ -17,3 +17,6 @@ const userSchema = new Schema({
 //to tell mongoose to make a colletion 
 //user is the name of the collectionand userSchema is the schema
 mongoose.model('user',userSchema);
+
+
+
