@@ -18,7 +18,13 @@ module.exports = app => {
     })
   );
   //the callback request after authentication
-  app.get("/auth/google/callback", passport.authenticate("google"));
+  app.get(
+    "/auth/google/callback",
+    passport.authenticate("google"),
+    (req, res) => {
+      res.redirect("/surveys");
+    }
+  );
   app.get("/auth/facebook/callback", passport.authenticate("facebook"));
 
   //get access to the current user
@@ -27,8 +33,8 @@ module.exports = app => {
   });
 
   //to logout the user
-  app.get("/api/logout",(req,res)=>{
+  app.get("/api/logout", (req, res) => {
     req.logout();
-    res.send(req.user);
+    res.redirect("/");
   });
 };
