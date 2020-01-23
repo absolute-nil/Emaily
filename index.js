@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const cookieSession = require("cookie-session");
+const bodyParser = require('body-parser');
 const keys = require("./config/keys");
 //passport requires model so we need mongoose require first in order
 require("./models/User");
@@ -15,6 +16,8 @@ mongoose.connect(keys.mongoURI, {
 });
 
 const app = express();
+
+app.use(bodyParser.json());
 
 //making use of cookies and passport
 app.use(
@@ -30,6 +33,7 @@ app.use(passport.session());
 
 //passing the express app to the routes or you can say adding the routes to the express server
 require("./routes/authRoutes")(app);
+require("./routes/billingRoutes")(app);
 
 //dynamic port number of heroku and our development port specified
 const PORT = process.env.PORT || 5000;

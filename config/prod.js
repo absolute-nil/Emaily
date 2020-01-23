@@ -5,5 +5,7 @@ module.exports = {
     mongoURI : process.env.MONGO_URI,
     cookieKey : process.env.COOKIE_KEY,
     facebookAppID : process.env.FACEBOOK_APP_ID,
-    facebookAppSecret : process.env.FACEBOOK_APP_SECRET
+    facebookAppSecret : process.env.FACEBOOK_APP_SECRET,
+    stripePublishableKey : process.env.STRIPE_PUBLISHABLE_KEY,
+    stripeSecretKey : process.env.STRIPE_SECRET_KEY
   };

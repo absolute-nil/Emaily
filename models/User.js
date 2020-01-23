@@ -11,6 +11,10 @@ const userSchema = new Schema({
     },
     facebookID:{
         type: String
+    },
+    credits: {
+        type: Number,
+        default : 0
     }
 });
 
