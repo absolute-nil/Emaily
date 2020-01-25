@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const keys = require("./config/keys");
 //passport requires model so we need mongoose require first in order
 require("./models/User");
+require(".//models/Survey");
 require("./services/passport");
 
 //connecting to mongoose remote
