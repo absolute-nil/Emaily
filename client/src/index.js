@@ -8,6 +8,10 @@ import { createStore, applyMiddleware } from "redux";
 import reduxThunk from "redux-thunk";
 import App from "./components/App";
 import reducers from "./reducers";
+//for testing in chorme 
+import axios from 'axios';
+window.axios = axios;
+
 //creating instance
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 

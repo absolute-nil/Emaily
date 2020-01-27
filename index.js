@@ -35,7 +35,7 @@ app.use(passport.session());
 //passing the express app to the routes or you can say adding the routes to the express server
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
-
+require("./routes/surveyRoutes")(app);
 //for production
 if(process.env.NODE_ENV==='production'){
   //express will server up main.css and js file
