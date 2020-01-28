@@ -5,8 +5,8 @@ import * as actions from "../actions";
 import Header from "./Header";
 import Landing from "./Landing";
 import Thanks from "./Thanks";
-const Dashboard = () => <h2>Dashboard</h2>;
-const SurveyNew = () => <h2>SurveyNew</h2>;
+import Dashboard from "./Dashboard";
+import SurveyNew from "./surveys/surveyNew";
 
 class App extends Component {
   //we mount the fetchuser to the props of the app.js so that any file can use it
@@ -22,7 +22,7 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />
-            <Route path="/thanks/:feedback" component={Thanks}/>
+            <Route path="/thanks/:feedback" component={Thanks} />
           </div>
         </BrowserRouter>
       </div>
