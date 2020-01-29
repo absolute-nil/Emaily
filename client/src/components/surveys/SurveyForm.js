@@ -4,7 +4,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { reduxForm, Field } from "redux-form";
 import SurveyField from "./SurveyField";
-
+import validateEmails from "../../utils/emailValidation";
+import emailValidation from "../../utils/emailValidation";
 const FIELDS = [
   { label: "Survey Title", name: "title" },
   { label: "Subject Line", name: "subject" },
@@ -44,6 +45,20 @@ class SurveyForm extends Component {
   }
 }
 
+function validate(values){
+    const errors = {};
+    errors.emails = emailValidation(values.emails||"");
+    _.each(FIELDS,({name}) =>{
+        //we use square brackets cuz values.name means there is something called name name= xyz
+        if(!values[name]) {
+            errors[name] = "You must provide a value!";
+        }
+    })
+    
+    return errors;
+}
+
 export default reduxForm({
+  validate,
   form: "surveyForm"
 })(SurveyForm);
