@@ -12,10 +12,10 @@ module.exports = survey => {
                     <p>${survey.body}</p>
                   </div>
                   <div style="color:green;">
-                    <a class="btn btn-primary" href="${keys.redirectDomain}thanks/yes" role="button">Yes</a>
+                    <a class="btn btn-primary" href="${keys.redirectDomain}api/surveys/${survey.id}/yes" role="button">Yes</a>
                   </div>
                   <div style="color:red;">
-                    <a class="btn btn-primary" href="${keys.redirectDomain}thanks/no" role="button">No</a>
+                    <a class="btn btn-primary" href="${keys.redirectDomain}api/surveys/${survey.id}/no" role="button">No</a>
                   </div>
                 </div>
             </body>
